@@ -1,146 +1,152 @@
 import 'package:flutter/material.dart';
 
+class BmiCalculator extends StatelessWidget {
+  const BmiCalculator({super.key});
 
-
-class Widget3  extends StatelessWidget {
-  const Widget3 ({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          color: Colors.purple,
-        ),
-        scaffoldBackgroundColor: Colors.blue,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(child: Text('BMI CALCULATOR')),
+        backgroundColor: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'BMI Calculator',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        body: Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // Text for BMI
+      body: Container(
+        padding: const EdgeInsets.all(10),
+        color: const Color.fromARGB(255, 215, 195, 216),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Container(
-                color: Colors.blue,
-                child: Text(
-                  'BMI',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 40, color: Colors.white),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 184, 165, 165),
+                  borderRadius: BorderRadius.circular(10),
                 ),
+                width: 170,
+                // color: const Color.fromARGB(255, 184, 165, 165),
+                child: const Column(children: [
+                  Icon(Icons.male, size: 100),
+                  Text("MALE"),
+                ]),
               ),
-              SizedBox(height: 20.0),
-
-              // Row for Gender
               Container(
-                color: Colors.blue,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    
-                    Column(
-                      children: [
-                        const Icon(Icons.male, color: Colors.white),
-
-                    const Text(
-                      'MALE',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Radio(
-                      value: 'male',
-                      groupValue: 'gender',
-                      onChanged: (value) {},
-                    ),
-                    Text(
-                      'FEMALE',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Radio(
-                      value: 'female',
-                      groupValue: 'gender',
-                      onChanged: (value) {},
-                    ),
-                      ]
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20.0),
-
-              // Slider for Height
-              Container(
-                color: Colors.blue,
-                child: Column(
-                  children: [
-                    Text(
-                      'HEIGHT (cm)',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Slider(
-                      value: 170.0,
-                      min: 120.0,
-                      max: 220.0,
-                      onChanged: (value) {},
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20.0),
-
-              // Row for Weight and Age
-              Container(
-                color: Colors.blue,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          labelText: 'WEIGHT (kg)',
-                          labelStyle: TextStyle(color: Colors.white),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                    SizedBox(width: 20),
-                    Flexible(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          labelText: 'AGE',
-                          labelStyle: TextStyle(color: Colors.white),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20.0),
-              // Calculate Button
-              Container(
-                color: Colors.blue,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    'CALCULATE',
-                    style: TextStyle(color: Colors.white),
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 184, 165, 165),
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                ),
+                  width: 170,
+                  // color: const Color.fromARGB(255, 184, 165, 165),
+                  child: const Column(children: [
+                    Icon(Icons.male, size: 100),
+                    Text("FEMALE"),
+                  ])),
+            ]),
+            Container(
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 184, 165, 165),
+                borderRadius: BorderRadius.circular(10),
               ),
-            ],
-          ),
+              width: double.infinity,
+              // color: const Color.fromARGB(255, 184, 165, 165),
+              child: Column(children: [
+                const Text(
+                  "HEIGHT",
+                  style: TextStyle(fontSize: 30),
+                ),
+                const Text(
+                  "176cm",
+                  style: TextStyle(fontSize: 50),
+                ),
+                Slider(
+                  value: 0.5,
+                  onChanged: (double value) {},
+                ),
+              ]),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 184, 165, 165),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  padding: const EdgeInsets.all(10),
+                  width: 170,
+                  // color: const Color.fromARGB(255, 184, 165, 165),
+                  child: Column(children: [
+                    const Text(
+                      "WEIGHT",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    const Text(
+                      "60",
+                      style: TextStyle(fontSize: 50),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        FloatingActionButton(
+                          onPressed: () {},
+                          child: const Icon(Icons.add),
+                        ),
+                        FloatingActionButton(
+                          onPressed: () {},
+                          child: const Icon(Icons.remove),
+                        ),
+                      ],
+                    ),
+                  ]),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 184, 165, 165),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  padding: const EdgeInsets.all(10),
+                  width: 170,
+                  // color: const Color.fromARGB(255, 184, 165, 165),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "WEIGHT",
+                          style: TextStyle(fontSize: 30),
+                        ),
+                        const Text(
+                          "60",
+                          style: TextStyle(fontSize: 50),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            FloatingActionButton(
+                              onPressed: () {},
+                              child: const Icon(Icons.add),
+                            ),
+                            FloatingActionButton(
+                              onPressed: () {},
+                              child: const Icon(Icons.remove),
+                            ),
+                          ],
+                        ),
+                      ]),
+                ),
+              ],
+            ),
+          ],
         ),
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.purple,
-          child: Container(
-            height: 50.0,
-          ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.blue,
+        child: ButtonBar(
+          alignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("CALCULATE"),
+            ),
+          ],
         ),
       ),
     );

@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
-
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,21 +11,21 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           leading: IconButton(
-              onPressed: () {},
-              icon:  Icon(Icons.arrow_back),
-              ),
-            actions:  [
+            onPressed: () {},
+            icon: Icon(Icons.arrow_back),
+          ),
+          actions: [
             IconButton(
               onPressed: () {},
-              icon:  Icon(Icons.logout_rounded),
-              ),
+              icon: Icon(Icons.logout_rounded),
+            ),
             IconButton(
               onPressed: () {
                 // Handle second action icon onPressed event
               },
               icon: Icon(Icons.settings),
             ),
-            ]
+          ],
         ),
         backgroundColor: Colors.white,
         body: Padding(
@@ -37,40 +33,40 @@ class MyApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset( 
-            'lib/assets/red.jpg',
-            fit: BoxFit.cover,
-            height: 300,
-            
-          ),
-          const  Text(
-            "1975 poersche 911 carrera",
-            style:TextStyle(fontSize: 30.0) ,
-          ),
-          const Row(
-            children: [
-              Text("essential information",
-              style:TextStyle(fontWeight: FontWeight.bold),)
-            ],
-          )
-
+              Image.asset(
+                'lib/assets/red.jpg',
+                fit: BoxFit.cover,
+                height: 300,
+              ),
+              const SizedBox(height: 20.0),
+              const Text(
+                "1975 Porsche 911 Carrera",
+                style: TextStyle(fontSize: 30.0),
+              ),
+              const SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Essential Information",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "1 out of 3 done",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+               Divider( 
+                thickness: 1.0, 
+                color: Colors.black, 
+              ),
           
             ],
-
-          )
-         
-            
-         
-          
-          
-
-          
-
-         
-        )
           ),
-      );
-  
-  
+             
+        ),
+      ),
+    );
   }
 }
