@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BmiCalculator extends StatelessWidget {
-  const BmiCalculator({super.key});
+class Widget3 extends StatelessWidget {
+  const Widget3({super.key});
 
   @override
   Widget build(BuildContext context) {
