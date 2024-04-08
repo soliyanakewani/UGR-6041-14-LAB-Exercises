@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
+class Course {
+  final String title;
+  final String code;
+   final String description;
+
+  Course(this.title, this.code, this.description);
+}
+
 class CoursesListScreen extends StatelessWidget {
- const CoursesListScreen({required this.courses, required this.onTapped});
+ const CoursesListScreen({super.key, required this.courses, required this.onTapped});
  final List<Course> courses;
  final ValueChanged<Course> onTapped;
 

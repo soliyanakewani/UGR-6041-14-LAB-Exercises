@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
+class Course {
+  final String title;
+  final String code;
+   final String description;
+
+  Course(this.title, this.code, this.description);
+}
 
 void main() {
   runApp( const MainApp());
